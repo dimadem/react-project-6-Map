@@ -1,0 +1,5 @@
+#NPM Modules
+node_modules
+
+#API KEYS
+.env
