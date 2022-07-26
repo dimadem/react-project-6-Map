@@ -1,0 +1,40 @@
+:root {
+  --primary: #0000ff;
+  --secondary: #5efc8d;
+  --light-gray: #cccccc;
+}
+
+body {
+  font-family: Helvetica;
+}
+
+.ui-button {
+  background-color: var(--primary);
+  color: white;
+  border: 0;
+  padding: 15px 20px;
+  min-width: 100%;
+  font-size: 16px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: opacity 200ms ease-out;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.ui-button:hover {
+  opacity: 0.8;
+}
+
+.ui-button:disabled {
+  opacity: 0.4;
+  cursor: disabled;
+}
+
+.ui-button:active {
+  box-shadow: 0 0px rgba(0, 0, 0, 0.2);
+  transform: translateY(1px);
+}
+
+.map {
+  height: 90%;
+}
