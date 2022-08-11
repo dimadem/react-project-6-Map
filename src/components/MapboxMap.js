@@ -1,10 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import mapboxgl from "!mapbox-gl";
-
-mapboxgl.accessToken =
-  "pk.eyJ1IjoiZGltYWRlbSIsImEiOiJjbDYwd3Q3OW0wMWNrM2pwbnc5NGk2eGo2In0.GxFLHa7q2lhtP18ui867gQ";
-//test apikey
-console.log(process.env.REACT_APP_MAPBOX_API_KEY, "API KEY");
+import MapInit from "./External.hook";
 
 export default function MapboxMap(props) {
   const mapContainer = useRef(null);
@@ -13,17 +8,7 @@ export default function MapboxMap(props) {
   const [lat, setLat] = useState(55.76199);
   const [zoom, setZoom] = useState(3);
 
-  useEffect(() => {
-    if (map.current) return; // initialize map only once
-
-    map.current = new mapboxgl.Map({
-      container: mapContainer.current,
-      style: "mapbox://styles/mapbox/dark-v10",
-      center: [lng, lat],
-      zoom: zoom,
-      projection: "globe",
-    });
-  });
+  MapInit({ mapContainer, lng, lat, zoom, map });
 
   return (
     <>
