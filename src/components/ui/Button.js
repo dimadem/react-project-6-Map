@@ -1,11 +1,19 @@
 import React from "react";
+import PropTypes from 'prop-types';
 
-export default function Button(props) {
+
+function Button({ onSetRandom }) {
   return (
     <>
-      <button className="ui-button" id="rerender" onClick={props.onSetRandom}>
+      <button className="ui-button" id="rerender" onClick={onSetRandom}>
         Ререндер!
       </button>
     </>
   );
 }
+
+Button.propTypes = {
+  onSetRandom: PropTypes.any
+}
+
+export default Button;

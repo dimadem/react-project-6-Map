@@ -1,14 +1,14 @@
-import React, { useEffect, useRef, useState } from "react";
-import MapInit from "./External.hook";
+import React, { useRef } from "react";
+import useMapbox from "./useMapbox";
 
-export default function MapboxMap(props) {
+export default function MapboxMap() {
   const mapContainer = useRef(null);
   const map = useRef(null);
-  const [lng, setLng] = useState(37.61192);
-  const [lat, setLat] = useState(55.76199);
-  const [zoom, setZoom] = useState(3);
+  const lng = 37.61192;
+  const lat = 55.76199;
+  const zoom = 3;
 
-  MapInit({ mapContainer, lng, lat, zoom, map });
+  useMapbox({ mapContainer, lng, lat, zoom, map });
 
   return (
     <>

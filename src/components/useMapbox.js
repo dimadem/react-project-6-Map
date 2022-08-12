@@ -1,12 +1,12 @@
 import { useEffect } from "react";
-import mapboxgl from "mapbox-gl";
+import mapboxgl from "!mapbox-gl";
 
 mapboxgl.accessToken =
   "pk.eyJ1IjoiZGltYWRlbSIsImEiOiJjbDYwd3Q3OW0wMWNrM2pwbnc5NGk2eGo2In0.GxFLHa7q2lhtP18ui867gQ";
 //test apikey
-console.log(process.env.REACT_APP_MAPBOX_API_KEY, "API KEY");
+//console.log(process.env.REACT_APP_MAPBOX_API_KEY, "API KEY");
 
-export default function MapInit({ mapContainer, lng, lat, zoom, map }) {
+export default function useMapbox({ mapContainer, lng, lat, zoom, map }) {
   useEffect(() => {
     if (map.current) return; // initialize map only once
 
@@ -17,5 +17,5 @@ export default function MapInit({ mapContainer, lng, lat, zoom, map }) {
       zoom: zoom,
       projection: "globe",
     });
-  }, []);
+  }, [mapContainer, lng, lat, zoom, map]);
 }

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import { render } from "react-dom";
 import MapboxMap from "./components/MapboxMap";
 import Button from "./components/ui/Button";
@@ -7,7 +7,7 @@ import "./index.css";
 
 function App() {
   const [random, setRandom] = useState(Math.random());
-
+  console.log(random);
   return (
     <>
       <Button onSetRandom={() => setRandom(Math.random())} />
