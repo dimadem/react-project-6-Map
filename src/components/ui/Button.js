@@ -13,7 +13,7 @@ function Button({ onSetRandom }) {
 }
 
 Button.propTypes = {
-  onSetRandom: PropTypes.any
+  onSetRandom: PropTypes.func
 }
 
 export default Button;
