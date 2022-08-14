@@ -6,16 +6,16 @@ mapboxgl.accessToken =
 //test apikey
 //console.log(process.env.REACT_APP_MAPBOX_API_KEY, "API KEY");
 
-export default function useMapbox({ mapContainer, lng, lat, zoom, map }) {
+export default function useMapbox({ mapRef, lng, lat, zoom, map }) {
   useEffect(() => {
     if (map.current) return; // initialize map only once
 
     map.current = new mapboxgl.Map({
-      container: mapContainer.current,
+      container: mapRef.current,
       style: "mapbox://styles/mapbox/dark-v10",
       center: [lng, lat],
       zoom: zoom,
       projection: "globe",
     });
-  }, [mapContainer, lng, lat, zoom, map]);
+  }, [mapRef, lng, lat, zoom, map]);
 }
